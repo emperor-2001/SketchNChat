@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+#canvas {
+  /* box-sizing : border-box; */
+  /* border box do not works for canvas border always goes outside the box */
+  border: 2px solid steelblue;
+}
+.toolbox {
+  background: steelblue;
+  width: 804px;
+  display: flex;
+  padding: 0.35rem;
+  /* justify-content: center;
+    align-items: center; */
+}
+
+.toolbox > * {
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.toolbox span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toolbox > *:last-child {
+  margin-left: auto;
+}

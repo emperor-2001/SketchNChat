@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  background-image: url("4.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+} */
+body {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1F2024;
+}
+#room {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  gap:2rem;
+  margin: 1rem 0;
+}
+#room > label{
+  color : #c0c0c0;
+}
+#room-input {
+  width: 35rem;
+  height: 2.5rem;
+  border: 1px solid #A68F97;
+  outline: none;
+  background: none;
+  padding: 0 0.5rem;
+  color: white;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  text-align: left;
+  /* font-weight: bold; */
+  font-size: 1.5rem;
+}
+.room-button {
+  padding: 0.6rem 1rem;
+  margin: 0.25rem;
+  margin-left: 1rem;
+  /* border: 1px solid black; */
+  /* border: 1px solid #A68F97; */
+  border: none;
+  outline: none;
+  background-color: #4B4952;
+  /* color: #131313; */
+  color : white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#canvas {
+  /* box-sizing : border-box; */
+  /* border box do not works for canvas border always goes outside the box */
+  /* border: 0px solid ; */
+  border-top: 20px solid #A68F97;
+  border-left: 20px solid #A68F97;
+  border-right: 20px solid #A68F97;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+}
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+}
+.livechat {
+  background-color: white;
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.chatbox {
+  flex-grow: 1;
+  margin: 1rem 0rem;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  scroll-behavior: smooth;
+  border-radius: 5px;
+
+}
+
+/* Custom Scroll bar */
+
+/* width */
+.chatbox::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50%;
+}
+
+/* Track */
+.chatbox::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.chatbox::-webkit-scrollbar-thumb {
+  background: #79717A;
+}
+
+/* Handle on hover */
+.chatbox::-webkit-scrollbar-thumb:hover {
+  background: #79717A;
+}
+
+/* Custom Scroll bar */
+
+
+.send {
+  width: 20rem;
+  height: 2.5rem;
+  margin-left:5px;
+  /* border: none; */
+  border: 1px solid #A68F97;
+  border-radius: 2px;
+  text-align: left;
+  /* font-weight: bold; */
+  font-size: 1.5rem;
+  outline: none;
+  padding : 0 0.5rem;
+}
+.send-button {
+  padding: 0.6rem 1rem;
+  margin: 0.25rem;
+  margin-left: auto;
+  border:none;
+  /* border: 1px solid black; */
+  background-color: #4B4952;
+  color: white;
+  /* border-radius: 5px; */
+  font-size: 1rem;
+  cursor: pointer;
+}
+.sendbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.message1 {
+  /* overflow: hidden; */
+  padding: 0.1rem 0.5rem;
+  font-size: 1rem;
+  background-color: #e498b3;
+  color: #131313;
+  max-width: 100%;
+  margin-right: 1rem;
+  border-radius: 0.1rem;
+}
+.div1 {
+  margin-top: 1rem;
+  text-align: left;
+  
+  margin-bottom: 0.75rem;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.div2 {
+  align-self: flex-start;
+  margin-top: 1rem;
+  text-align: right;
+
+  margin-bottom: 0.75rem;
+  max-width: 180px;
+  /* inline-size: 150px; */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.message2 {
+  padding: 0.1rem 0.5rem;
+  font-size: 1rem;
+  background-color: #e2d6da;
+  color: #131313;
+  margin-left: 1rem;
+  border-radius: 0.1rem;
+}
+.box7 {
+  height: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-top: 5rem;
+  background-color: #4B4952;
+  color: white;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+
+  padding: 1rem 2rem;
+}
+.box4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.box1 {
+  position: relative;
+  margin-top: -400px;
+  top: 540px;
+  right: 680px;
+  height: 200px;
+  width: 305px;
+  /* background-color: black; */
+  background: url("./canv.png") no-repeat center center;
+  animation: animate1 2s infinite alternate-reverse ease-in-out;
+}
+
+.box2 {
+  position: relative;
+  top: 350px;
+  left: 680px;
+  height: 200px;
+  width: 305px;
+  /* background-color: black; */
+  background: url("./canv.png") no-repeat center center;
+  animation: animate2 2s infinite alternate-reverse ease-in-out;
+}
+@keyframes animate2 {
+  from {
+    top: 350px;
+    /* height : 200px; */
+  }
+  to {
+    /* width : 400px; */
+    /* height : 220px; */
+    /* background: red; */
+    top: 400px;
+  }
+}
+@keyframes animate1 {
+  from {
+    top: 540px;
+    /* height : 200px; */
+  }
+  to {
+    /* width : 400px; */
+    /* height : 220px; */
+    /* background: red; */
+    top: 600px;
+  }
+}
+.toolbox {
+  background: #A68F97;
+  width: 790px;
+  display: flex;
+  padding: 0.35rem 1rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* justify-content: center;
+    align-items: center; */
+}
+
+.toolbox > * {
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.toolbox span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toolbox > *:last-child {
+  margin-left: auto;
+}
+.rim {
+  background-color: #A68F97;
+  height: 8vh;
+  width: 40px;
+}
+.base {
+  background-color: #A68F97;
+  width: 600px;
+  height: 39px;
+  border-radius: 20px;
+}
+
+
+@media screen and (max-width : 768px) {
+  .box5 {
+    flex-direction: column;
+    gap:5rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }  
+  canvas{
+    height: 400px;
+  }
+  .livechat,.box1,.box2,.toolbox,.base {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .sendbox,.sendbox > input{
+    width: 95%;
+    margin: 0 auto;
+  }
+  .rim,.base{
+    display: none;
+  }
+  #room-input{
+    width: 30vw;
+  }
+  #room{
+    gap : 0.3rem;
+  }
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sketch N Chat</title>
+    <link rel="stylesheet" href="style1.css" />
+      <script src ="script.js" type = "module"> </script>
+      <script src="/socket.io/socket.io.js"></script>
+
+      <!-- icons -->
+      
+      <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+      <!-- icons -->
+
+  </head>
+  <body>
+    
+    <!-- <div class="box"></div> -->
+    <!-- <div class="box2"></div> -->
+    <div id="room"> 
+      <label for="room-input">Room</label>
+      <input type="text" id = "room-input" >
+      <button type = "button" class="room-button">Join</button>
+    </div>
+    <div class="box5">
+    <div class="box4">
+      <div class="canvas-error"></div>
+      <canvas id="canvas" height="400" width="750"></canvas>
+      <div class="cont">
+      <div class="toolbox">
+      <button id="increase">+</button>
+      <span id="size">5</span>
+      <button id="decrease">-</button>
+      <input type="color" name="color" id="color" />
+      <button id="clear">X</button>
+    </div>
+    <div class="rim"></div>
+    <div class="base"></div>
+    </div>
+    </div>
+    <div class="livechat">
+      <div class="box7">Live Chat</div>
+      <div class="chatbox"></div>
+      <div class="sendbox">
+        <input type="text" class="send">
+         <button type ="button" class = "send-button">send</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  </body>
+
+     <script>
+      document.querySelector('input.send').addEventListener('keydown',e => {
+        if(e.keyCode === 13) document.querySelector('.send-button').click();
+      })
+
+      document.querySelector('#room-input').addEventListener('keydown',e => {
+        if(e.keyCode === 13) document.querySelector('.room-button').click();
+      })
+
+
+     </script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script> -->
+</html>
