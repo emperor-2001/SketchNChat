@@ -62,6 +62,10 @@ socket.on("connect", () => {
     console.log(x, y);
   });
 
+  function updateSizeOnScreen() {
+    sizeEL.innerText = size;
+  }
+
   canvas.addEventListener("mousemove", (e) => {
     if (isPressed) {
       const x2 = e.offsetX;
@@ -100,36 +104,36 @@ socket.on("connect", () => {
     ctx.stroke();
   }
 
-  function updateSizeOnScreen() {
-    sizeEL.innerText = size;
-  }
-
   increaseBtn.addEventListener("click", () => {
-    size += 5;
+    size += 1;
 
     if (size > 50) {
       size = 50;
     }
     socket.emit("send-increase", size, room);
-    updateSizeOnScreen();
+    // updateSizeOnScreen();
+    sizeEL.innerText = size;
   });
   socket.on("receive-increase", (sz) => {
     size = sz;
-    updateSizeOnScreen();
+    // updateSizeOnScreen();
+    sizeEL.innerText = size;
   });
 
   decreaseBtn.addEventListener("click", () => {
-    size -= 5;
+    size -= 1;
 
-    if (size < 5) {
-      size = 5;
+    if (size < 2) {
+      size = 1;
     }
     socket.emit("send-decrease", size, room);
-    updateSizeOnScreen();
+    // updateSizeOnScreen();
+    sizeEL.innerText = size;
   });
   socket.on("receive-decrease", (sz) => {
     size = sz;
-    updateSizeOnScreen();
+    // updateSizeOnScreen();
+    sizeEL.innerText = size;
   });
   colorEl.addEventListener("change", (e) => {
     color = e.target.value;
@@ -184,9 +188,6 @@ socket.on("connect", () => {
   }
 
   socket.on("receive-message", (message) => {
-    // if (join === 1) {
-    //   socket.join(room);
-    // }
     displayMessage2(message);
   });
 
@@ -201,9 +202,6 @@ socket.on("connect", () => {
 
   roomBtn.addEventListener("click", () => {
     room = roomInput.value;
-
-    socket.emit("join-room", room, canvas, (cv) => {
-      if (cv) canvas = cv;
-    });
+    socket.emit("join-room", room);
   });
 });

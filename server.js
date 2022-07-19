@@ -2,11 +2,7 @@ var express = require("express");
 var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
-// main namespace
-// const mainAdapter = io.of("/").adapter; // WARNING! io.adapter() will not work
-// custom namespace
-// const adminAdapter = io.of("/admin").adapter;
-let a = new Object();
+
 app.use(express.static(__dirname + "/public"));
 
 var port = process.env.PORT || 3000;
@@ -54,10 +50,10 @@ io.on("connection", (socket) => {
   });
   socket.on("send-increase", (size, room) => {
     if (room === "") {
-      socket.broadcast.emit("receive-increase", room);
+      socket.broadcast.emit("receive-increase", size);
       console.log("No room selected");
     } else {
-      socket.to(room).emit("receive-increase", room);
+      socket.to(room).emit("receive-increase", size);
     }
   });
   socket.on("send-decrease", (size, room) => {
@@ -83,14 +79,7 @@ io.on("connection", (socket) => {
   //   socket.to(room).emit("send-message", `You have joined ${room}`, room);
   // });
 
-  socket.on("join-room", (room, canvas, cb) => {
+  socket.on("join-room", (room) => {
     socket.join(room);
-
-    if (!a.room) {
-      a.room = canvas;
-      cb(undefined);
-    } else {
-      cb(canvas);
-    }
   });
 });
