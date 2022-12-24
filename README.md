@@ -11,7 +11,7 @@
 
 This **webapp** is used to draw **free hand illustrations** as well as **chat** with friends in real time in private discussion rooms.
 <br>
-Use at : &nbsp; &nbsp; **https://sketch-n-chat.herokuapp.com/**
+Use at : &nbsp; &nbsp; **https://sketch-n-chat.onrender.com/**
 </br>
 
 <hr>
